@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="StudentDataBinding">
+        <variable
+            name="studentmodel"
+            type="com.example.demonexteductaion.viewmodel.StudentViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp" >
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student Name : "
+            android:textSize="22sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/studentName_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@{studentmodel.studentName}"
+            android:hint="Student Name"
+            android:textSize="22sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/studentName"/>
+
+
+        <TextView
+            android:id="@+id/rollNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Roll Number : "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/studentName"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/rollNum_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@{String.valueOf(studentmodel.rollNum)}"
+            android:textStyle="bold"
+            android:hint="Roll Number"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/studentName_txt"
+            app:layout_constraintLeft_toRightOf="@id/rollNum"/>
+
+        <TextView
+            android:id="@+id/marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marks : "
+            android:layout_marginTop="2dp"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/rollNum"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/marks_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Marks"
+            android:text="@{String.valueOf(studentmodel.marks)}"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/rollNum_txt"
+            app:layout_constraintLeft_toRightOf="@id/marks"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
